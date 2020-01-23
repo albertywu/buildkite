@@ -6,7 +6,7 @@ set -ex
 # per docker spec, / and @ are invalid characters for docker tags
 # per unix, / cannot be part of a filename (treats as directory)
 escape_package() {
-  node -e "console.log('$1'.replace(/\//g, '__').replace(/@/g, '-AT-'))"
+  echo $1 | sed 's/\//__/g' | sed 's/@/-AT-/g'
 }
 
 # s3_download <s3 uri> <file>
