@@ -1,0 +1,10 @@
+steps:
+  - name: ":console:"
+    command: "echo testing .buildkite.wua pipeline"
+    parallelism: 5
+    agents:
+      queue: web-code-default
+  - wait
+  - command: 'echo DONE'
+    agents:
+      queue: web-code-default
