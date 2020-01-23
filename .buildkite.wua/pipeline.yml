@@ -1,17 +1,17 @@
 steps:
   - name: ":console:"
     command: "./lint.sh projects/example-trips-viewer-fusion"
-    parallelism: 5
+    parallelism: 30
     agents:
       queue: web-code-default
   - name: ":console:"
     command: "./cover.sh projects/example-trips-viewer-fusion"
-    parallelism: 5
+    parallelism: 30
     agents:
       queue: web-code-default
   - name: ":console:"
     command: "./flow.sh projects/example-trips-viewer-fusion"
-    parallelism: 5
+    parallelism: 30
     agents:
       queue: web-code-default
   - wait
