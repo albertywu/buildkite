@@ -10,12 +10,12 @@ function generate_pipeline() {
     echo "      branch: '\${BUILDKITE_BRANCH}'";
     echo "      commit: '\${BUILDKITE_COMMIT}'";
     echo "      message: '\${BUILDKITE_MESSAGE}'";
-    echo "    env:";
-    echo "      PROJECT: '$project_path'";
-    echo "      BUILD_IMAGE: '\${BUILD_IMAGE}'";
-    echo "      BUILD_IMAGE_INTEGRATION: '\${BUILD_IMAGE_INTEGRATION}'";
-    echo "      BUILD_TAG: '\${BUILD_TAG}'";
-    echo "      CI_VERSION: '\${CI_VERSION}'";
+    echo "      env:";
+    echo "        PROJECT: '$project_path'";
+    echo "        BUILD_IMAGE: '\${BUILD_IMAGE}'";
+    echo "        BUILD_IMAGE_INTEGRATION: '\${BUILD_IMAGE_INTEGRATION}'";
+    echo "        BUILD_TAG: '\${BUILD_TAG}'";
+    echo "        CI_VERSION: '\${CI_VERSION}'";
   ); done;
 }
 
