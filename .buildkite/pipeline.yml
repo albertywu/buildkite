@@ -4,3 +4,19 @@ steps:
     parallelism: 5
     agents:
       queue: $BUILDKITE_AGENT_META_DATA_QUEUE
+  - wait
+  - name: "... test #1 ..."
+    commands:
+      - 'echo "testing inline script"'
+      - 'ls -al'
+  - wait
+  - name: "... ecr login ..."
+    commands: 
+      - 'docker image ls'
+    plugins:
+      - ecr#v2.0.0:
+        login: true
+  - wait
+  - name: "... test #2 ..."
+    commands: 
+      - 'echo DONE'
