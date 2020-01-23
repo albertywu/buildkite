@@ -7,9 +7,4 @@ steps:
   - wait
   - command: 'echo testing command'
   - wait
-  - command: ./run_build.sh
-    plugins:
-      - ecr#v2.0.0:
-        login: true
-  - wait
   - command: 'echo DONE'
