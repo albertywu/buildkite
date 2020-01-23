@@ -15,6 +15,7 @@ function generate_pipeline() {
       echo "    commands:";
       echo "    - 'echo $project_name ${job_type}!'";
       echo "    timeout_in_minutes: 15";
+      echo "    parallelism: 5";
       echo "    agents:";
       echo "      queue: web-code-default";
     ); done;
