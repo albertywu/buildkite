@@ -3,8 +3,12 @@ steps:
     command: "script.sh"
     parallelism: 5
     agents:
-      queue: $BUILDKITE_AGENT_META_DATA_QUEUE
+      queue: web-code-default
   - wait
   - command: 'echo testing command'
+    agents:
+      queue: web-code-default
   - wait
   - command: 'echo DONE'
+    agents:
+      queue: web-code-default
