@@ -1,4 +1,8 @@
 steps:
+  - name: "show docker login"
+    command: "cat ~/.docker/config.json"
+    agents:
+      queue: web-code-default 
   - name: ":console:"
     command: "script.sh"
     parallelism: 5
@@ -7,11 +11,6 @@ steps:
           login: true
     agents:
       queue: web-code-default
-  - wait
-  - command: 'echo testing command'
-    agents:
-      queue: web-code-default
-  - wait
   - command: 'echo DONE'
     agents:
       queue: web-code-default
