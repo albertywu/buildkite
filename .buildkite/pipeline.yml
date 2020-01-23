@@ -4,6 +4,7 @@ steps:
     parallelism: 5
     agents:
       queue: web-code-default
+  - wait
   - command: 'echo DONE'
     agents:
       queue: web-code-default
