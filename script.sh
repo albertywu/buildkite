@@ -19,7 +19,7 @@ util_install_yarn_cache_tarball $PACKAGE
 # get the yarn cache directory inside the docker container
 YARN_CACHE_DIR=$(docker run --rm "$IMAGE" bash -c 'yarn cache dir')
 
-docker run -v .yarn_cache:$YARN_CACHE_DIR -i --rm $IMAGE bash <<CMD
+docker run -v ${PWD}/.yarn_cache:$YARN_CACHE_DIR -i --rm $IMAGE bash <<CMD
   jazelle ci --cwd $PACKAGE
   jazelle lint --cwd $PACKAGE
 CMD
