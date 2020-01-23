@@ -2,6 +2,9 @@ steps:
   - name: ":console:"
     command: "script.sh"
     parallelism: 5
+    plugins:
+      - ecr#v2.0.0:
+          login: true
     agents:
       queue: web-code-default
   - wait
