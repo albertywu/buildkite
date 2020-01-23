@@ -11,9 +11,9 @@ function generate_pipeline() {
     project_name=$(basename "$project");
 
     for job_type in $job_types ; do (
-      echo "  - label: '$project_name: $job_type'";
+      echo "  - label: '$project_name'";
       echo "    commands:";
-      echo "    - 'echo ${job_type}!'";
+      echo "    - 'echo $project_name ${job_type}!'";
       echo "    timeout_in_minutes: 15";
       echo "    agents:";
       echo "      queue: web-code-default";
