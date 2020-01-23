@@ -4,7 +4,7 @@ function generate_pipeline() {
 
   echo "steps:"
   for job_type in $job_types ; do (
-    echo "  - label: '$project_name'";
+    echo "  - label: '$job_type'";
     echo "    commands:";
     echo "    - 'echo $project_name $job_type'";
     echo "    timeout_in_minutes: 15";
