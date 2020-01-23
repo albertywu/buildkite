@@ -5,18 +5,11 @@ steps:
     agents:
       queue: $BUILDKITE_AGENT_META_DATA_QUEUE
   - wait
-  - name: "... test #1 ..."
-    commands:
-      - 'echo "testing inline script"'
-      - 'ls -al'
+  - command: 'echo testing command'
   - wait
-  - name: "... ecr login ..."
-    commands: 
-      - 'docker image ls'
+  - command: ./run_build.sh
     plugins:
       - ecr#v2.0.0:
         login: true
   - wait
-  - name: "... test #2 ..."
-    commands: 
-      - 'echo DONE'
+  - command: 'echo DONE'
