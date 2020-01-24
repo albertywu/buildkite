@@ -5,7 +5,6 @@ steps:
     agents:
       queue: web-code-default
   - label: ':jest: Unit tests'
-    if: "${COVER_DISABLED} != 'true'"
     command: './cover.sh'
     timeout_in_minutes: 15
     agents:

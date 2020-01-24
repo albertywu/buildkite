@@ -1,15 +1,3 @@
-# usage:
-# if is_in_list "$list" "$item"; then ...
-function is_in_list() {
-  local list=$1
-  local item=$2
-
-  if [[ " $list " =~ .*\ $item\ .* ]]
-    then return 0
-    else return 1
-  fi
-}
-
 function generate_pipeline() {
   echo "steps:"
 
@@ -28,9 +16,6 @@ function generate_pipeline() {
     echo "        BUILD_IMAGE_INTEGRATION: '\${BUILD_IMAGE_INTEGRATION}'";
     echo "        BUILD_TAG: '\${BUILD_TAG}'";
     echo "        CI_VERSION: '\${CI_VERSION}'";
-    if is_in_list "$PROJECTS_COVER_DISABLED" "$PROJECT"
-      then echo "        COVER_DISABLED: 'true'";
-    fi
     echo "        WEB_CODE_AWS_KEY_ID: '\${WEB_CODE_AWS_KEY_ID}'";
     echo "        WEB_CODE_AWS_ACCESS_KEY: '\${WEB_CODE_AWS_ACCESS_KEY}'";
   ); done;
