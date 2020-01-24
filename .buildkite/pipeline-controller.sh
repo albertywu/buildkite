@@ -4,7 +4,7 @@ function generate_pipeline() {
   for project_path in $PROJECTS ; do (
     project_name=$(basename "$project_path");
 
-    echo "  - trigger: 'web-code-tests'";
+    echo "  - trigger: 'web-code-runner'";
     echo "    label: '$project_name'";
     echo "    build:";
     echo "      branch: '\${BUILDKITE_BRANCH}'";
