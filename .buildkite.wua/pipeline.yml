@@ -1,17 +1,17 @@
 steps:
   - name: ":console:"
     command: "./lint.sh"
-    parallelism: 30
+    parallelism: $NUM_PARALLEL
     agents:
       queue: web-code-default
   - name: ":console:"
     command: "./cover.sh"
-    parallelism: 30
+    parallelism: $NUM_PARALLEL
     agents:
       queue: web-code-default
   - name: ":console:"
     command: "./flow.sh"
-    parallelism: 30
+    parallelism: $NUM_PARALLEL
     agents:
       queue: web-code-default
   - wait
