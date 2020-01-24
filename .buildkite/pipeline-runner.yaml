@@ -1,26 +1,26 @@
 steps:
   - label: ':webpack: Bundle size'
-    command: './bundle_size.sh ${BUILD_IMAGE} ${PROJECT}'
+    command: './bundle_size.sh'
     timeout_in_minutes: 15
     agents:
       queue: web-code-default
   - label: ':jest: Unit tests'
-    command: './cover.sh ${BUILD_IMAGE} ${PROJECT}'
+    command: './cover.sh'
     timeout_in_minutes: 15
     agents:
       queue: web-code-default
   - label: ':flowtype: Flow'
-    command: './flow.sh ${BUILD_IMAGE} ${PROJECT}'
+    command: './flow.sh'
     timeout_in_minutes: 15
     agents:
       queue: web-code-default
   - label: ':chrome: Integration tests'
-    command: './integration ${BUILD_IMAGE_INTEGRATION} ${PROJECT}'
+    command: './integration.sh'
     timeout_in_minutes: 15
     agents:
       queue: web-code-default
   - label: ':eslint: Lint'
-    command: './lint.sh ${BUILD_IMAGE} ${PROJECT}'
+    command: './lint.sh'
     timeout_in_minutes: 15
     agents:
       queue: web-code-default
