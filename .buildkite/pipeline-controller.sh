@@ -9,7 +9,7 @@ function generate_pipeline() {
     echo "    build:";
     echo "      branch: '\${BUILDKITE_BRANCH}'";
     echo "      commit: '\${BUILDKITE_COMMIT}'";
-    echo "      message: '\${BUILDKITE_MESSAGE}: $project_name'";
+    echo "      message: '[$project_name] \${BUILDKITE_MESSAGE}'";
     echo "      env:";
     echo "        PROJECT: '$project_path'";
     echo "        BUILD_IMAGE: '\${BUILD_IMAGE}'";
