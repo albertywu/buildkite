@@ -16,6 +16,8 @@ function generate_pipeline() {
     echo "        BUILD_IMAGE_INTEGRATION: '\${BUILD_IMAGE_INTEGRATION}'";
     echo "        BUILD_TAG: '\${BUILD_TAG}'";
     echo "        CI_VERSION: '\${CI_VERSION}'";
+    echo "        WEB_CODE_AWS_KEY_ID: '\${WEB_CODE_AWS_KEY_ID}'";
+    echo "        WEB_CODE_AWS_ACCESS_KEY: '\${WEB_CODE_AWS_ACCESS_KEY}'";
   ); done;
 }
 
