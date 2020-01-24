@@ -1,0 +1,26 @@
+steps:
+  - label: ':webpack: Bundle size'
+    command: 'echo bundle-size for ${PROJECT}'
+    timeout_in_minutes: 15
+    agents:
+      queue: web-code-default
+  - label: ':jest: Unit tests'
+    command: 'echo cover for ${PROJECT}'
+    timeout_in_minutes: 15
+    agents:
+      queue: web-code-default
+  - label: ':flowtype: Flow'
+    command: 'echo flow for ${PROJECT}'
+    timeout_in_minutes: 15
+    agents:
+      queue: web-code-default
+  - label: ':chrome: Integration tests'
+    command: 'echo integration for ${PROJECT}'
+    timeout_in_minutes: 15
+    agents:
+      queue: web-code-default
+  - label: ':eslint: Lint'
+    command: 'echo lint for ${PROJECT}'
+    timeout_in_minutes: 15
+    agents:
+      queue: web-code-default
